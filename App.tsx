@@ -2,6 +2,7 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import CarItem from './src/components/CarItem';
 import {Cars} from './src/res/Data';
+import MainNavigation from './routes/nav';
 
 // life cycle
 /**
@@ -25,14 +26,16 @@ const App = () => {
   };
 
   return (
-    <View>
-      <ScrollView>
-        {renderCars()}
-      </ScrollView>
+    <View style={styles.container}>
+      <MainNavigation />
     </View>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
