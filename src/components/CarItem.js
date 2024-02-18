@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import ScreenNames from '../../routes/ScreenNames';
+import {useNavigation} from '@react-navigation/native';
 
 const CarItem = props => {
   const {brand, year, km, hideImage} = props;
@@ -8,17 +10,26 @@ const CarItem = props => {
   // const km = props.km
   // const hideImage = props.hideImage
 
-  const [like /** state */ , setLike /*setState */] = useState(0)
+  const [like /** state */, setLike /*setState */] = useState(0);
+
+  const navigation = useNavigation();
 
   // var like = 0;
 
   const onItemPress = () => {
     // like++;
-    setLike(like +1 )
+    setLike(like + 1);
+
+    const car = {
+      brand,
+      year,
+      km,
+      hideImage: true,
+      img: props.img,
+    };
+
+    navigation.navigate(ScreenNames.product, {data: car});
   };
-
-  console.log('likes: ', like , "brand: " , brand);
-
 
   return (
     <TouchableOpacity onPress={onItemPress}>
