@@ -34,6 +34,10 @@ const ProductScreen = props => {
     const cartArr = cart;
     cartArr.push(data);
     setCart([...cartArr]);
+
+    // setCart(prev => {
+    //   return prev.push(data);
+    // });
   };
 
   const navigateToCart = () => {
