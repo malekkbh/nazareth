@@ -1,15 +1,21 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import ScreenNames from '../../routes/ScreenNames';
 
 const Splash = props => {
   const navigatoToHome = () => {
-    props.navigation.navigate(ScreenNames.home);
+    setTimeout(() => {
+      props.navigation.replace(ScreenNames.home);
+    }, 2500);
   };
+
+  useEffect(() => {
+    navigatoToHome();
+  }, []);
 
   return (
     <View>
-      <Button title="Home" onPress={navigatoToHome} />
+      <Text>Nazareth App</Text>
     </View>
   );
 };

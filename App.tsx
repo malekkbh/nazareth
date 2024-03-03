@@ -3,6 +3,7 @@ import React from 'react';
 import CarItem from './src/components/CarItem';
 import {Cars} from './src/res/Data';
 import MainNavigation from './routes/nav';
+import NazarethProvider from './store/nazarethProvider';
 
 // life cycle
 /**
@@ -27,7 +28,9 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <MainNavigation />
+      <NazarethProvider>
+        <MainNavigation />
+      </NazarethProvider>
     </View>
   );
 };

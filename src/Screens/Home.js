@@ -7,7 +7,13 @@ const Home = () => {
   const renderCars = () => {
     const carsComponent = Cars.map(car => {
       return (
-        <CarItem brand={car.brand} year={car.year} km={car.km} img={car.img} />
+        <CarItem
+          brand={car.brand}
+          year={car.year}
+          km={car.km}
+          img={car.img}
+          id={car.id}
+        />
       );
     });
 

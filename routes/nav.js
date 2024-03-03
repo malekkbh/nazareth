@@ -5,6 +5,7 @@ import ScreenNames from './ScreenNames';
 import Splash from '../src/Screens/Splash';
 import Home from '../src/Screens/Home';
 import ProductScreen from '../src/Screens/ProductScreen';
+import Cart from '../src/Screens/Cart';
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ const MainNavigation = () => {
         <Stack.Screen name={ScreenNames.splash} component={Splash} />
         <Stack.Screen name={ScreenNames.home} component={Home} />
         <Stack.Screen name={ScreenNames.product} component={ProductScreen} />
+        <Stack.Screen name={ScreenNames.cart} component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>
   );

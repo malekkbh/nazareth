@@ -4,7 +4,7 @@ import ScreenNames from '../../routes/ScreenNames';
 import {useNavigation} from '@react-navigation/native';
 
 const CarItem = props => {
-  const {brand, year, km, hideImage} = props;
+  const {brand, year, km, hideImage, onPress} = props;
   // const brand = props.brand
   // const year = props.year
   // const km = props.km
@@ -16,6 +16,10 @@ const CarItem = props => {
 
   // var like = 0;
 
+  const onPressHandler = () => {
+    onPress ? onPress() : onItemPress();
+  };
+
   const onItemPress = () => {
     // like++;
     setLike(like + 1);
@@ -26,13 +30,14 @@ const CarItem = props => {
       km,
       hideImage: true,
       img: props.img,
+      id: props.id,
     };
 
     navigation.navigate(ScreenNames.product, {data: car});
   };
 
   return (
-    <TouchableOpacity onPress={onItemPress}>
+    <TouchableOpacity onPress={onPressHandler}>
       <View style={styles.container}>
         <View style={styles.txtContainer}>
           <Text style={styles.txt}>{`Brand: ` + props.brand}</Text>
