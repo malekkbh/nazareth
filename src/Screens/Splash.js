@@ -6,7 +6,7 @@ const Splash = props => {
   const navigatoToHome = () => {
     setTimeout(() => {
       props.navigation.replace(ScreenNames.home);
-    }, 2500);
+    }, 300);
   };
 
   useEffect(() => {
